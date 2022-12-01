@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'LIPE.urls'
+ROOT_URLCONF = 'LIPE.LIPE.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'LIPE.wsgi.application'
+WSGI_APPLICATION = 'LIPE.LIPE.wsgi.application'
 
 
 # Database
