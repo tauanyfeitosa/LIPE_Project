@@ -1,4 +1,5 @@
-from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import BaseUserManager, PermissionsMixin
 from django.db import models
 
 class GerenciadorUsuarios(BaseUserManager):
@@ -60,4 +61,16 @@ class GerenciadorUsuarios(BaseUserManager):
 
 #class Titulacao():
 
-#class Usuario(AbstractBaseUser, PermissionsMixin):
+class Universidade():
+    UFS = '0',
+    UNIT = '1',
+    OUTROS = '9',
+
+    CHOICES = (
+        (UFS, 'Universidade Federal de Sergipe')
+    )
+
+class Usuario(AbstractBaseUser, PermissionsMixin):
+    universidade = models.CharField(verbose_name='Universidade', max_length=1, choices=Universidade.CHOICES, required=True)
+    termos_uso = models.BooleanField()
+    membro_lipe = models.BooleanField(default=False)
