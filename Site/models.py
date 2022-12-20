@@ -59,7 +59,29 @@ class GerenciadorUsuarios(BaseUserManager):
         user.save(using=self._db)
         return user
 
-#class Titulacao():
+class Titulacao():
+    GRADUANDO = '1'
+    GRADUADO = '2'
+    EM_ESPECIALIZACAO = '3'
+    ESPECIALISTA = '4'
+    MESTRANDO = '5'
+    MESTRE = '6'
+    DOUTORANDO = '7'
+    DOUTOR = '8'
+    OUTRO = '0'
+
+    CHOICES = (
+        (GRADUANDO, 'Ensino Superior em Curso'),
+        (GRADUADO, 'Graduação Completa'),
+        (EM_ESPECIALIZACAO, 'Em especialização'),
+        (ESPECIALISTA, 'Especialista'),
+        (MESTRANDO, 'Mestrado em curso'),
+        (MESTRE, 'Mestre'),
+        (DOUTORANDO, 'Doutorado em curso'),
+        (DOUTOR, 'Doutor'),
+        (OUTRO, 'Outro')
+    )
+
 
 class Universidade():
     UFS = '0',
